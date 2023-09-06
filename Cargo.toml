@@ -7,8 +7,11 @@ edition = "2021"
 
 [dependencies]
 num-bigint = { version = "0.4", features = ["rand"] }
+sha2 = "0.10.6"
+rsa = { version = "0.6.1", features = ["serde"] }
 halo2-base = { version = "0.2.2", default-features = false, features = [
     "halo2-pse",
     "display",
 ], git = "https://github.com/axiom-crypto/halo2-lib.git", rev = "9860acc" }
-halo2-rsa = { git = "https://github.com/zkemail/halo2-rsa.git", version = "0.1.0", branch = "main", default-features = false }
+halo2-rsa = { git = "https://github.com/zkemail/halo2-rsa.git", version = "0.1.0", branch = "main", default-features = true }
+halo2-dynamic-sha256 = { git = "https://github.com/zkemail/halo2-dynamic-sha256.git", version = "0.1.0", branch = "main" }
