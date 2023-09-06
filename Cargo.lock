@@ -335,7 +335,9 @@ dependencies = [
 name = "halo2-zkcert-experimental"
 version = "0.1.0"
 dependencies = [
+ "halo2-base",
  "halo2-rsa",
+ "num-bigint",
 ]
 
 [[package]]
