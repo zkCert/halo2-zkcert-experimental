@@ -8,6 +8,8 @@ edition = "2021"
 [dependencies]
 num-bigint = { version = "0.4", features = ["rand"] }
 sha2 = "0.10.6"
+x509-parser = { version = "0.15", features= ["verify"] }
+openssl = "0.10"
 rsa = { version = "0.6.1", features = ["serde"] }
 halo2-base = { version = "0.2.2", default-features = false, features = [
     "halo2-pse",
