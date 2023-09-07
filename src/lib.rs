@@ -40,7 +40,7 @@ impl<F: PrimeField> CertificateVerificationCircuit<F> {
     const LIMB_BITS:usize = 64;
     const EXP_LIMB_BITS:usize = 5;
     const DEFAULT_E: u128 = 65537;
-    const NUM_ADVICE:usize = 50;
+    const NUM_ADVICE:usize = 40;
     const NUM_FIXED:usize = 1;
     const NUM_LOOKUP_ADVICE:usize = 4;
     const LOOKUP_BITS:usize = 12;
@@ -167,13 +167,8 @@ impl<F: PrimeField> Circuit<F> for CertificateVerificationCircuit<F> {
         }
         Ok(())
 
-    }
-
- 
+    } 
 }
-
-
-
 
 
 #[cfg(test)]
@@ -249,7 +244,7 @@ mod test {
             let hash_fes = hashed_msg.iter().map(|byte| Fr::from(*byte as u64)).collect::<Vec<Fr>>();
             let public_inputs = vec![n_fes,hash_fes];
             
-            let k = 16;
+            let k = DEGREE as u32;
 
             let prover = match MockProver::run(k, &circuit, public_inputs) {
                 Ok(prover) => prover,
